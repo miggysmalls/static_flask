@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+{% block title %}
+Test Result
+{% endblock %}
+
+{% block head %}
+<script>
+    $(document).on("click","#refresh",function(){
+    $.get('/about',function(data) {
+            $("#new-data").html(data);
+    });
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<h1>Results</h1>
+<br>
+<button
+        id="refresh"
+        class="button">refresh result
+
+</button>
+<br>
+<br>
+RESPONSE:
+<br>
+<pre> {{ initial_response }} </pre>
+<!--{{ initial_response|tojson }}-->
+<br>
+Test run id: {{ test_run_id }}
+
+<div id="results">
+
+</div>
+
+
+{% set initial_response = refresh %}
+
+{% endblock %}
