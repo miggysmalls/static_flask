@@ -51,5 +51,5 @@ def trigger_pas_regression():
                            test_run_id=test_run_id)
 
 
-if __name__ == '__main__':
+if __name__ == '__application__':
     application.run('0.0.0.0', port=5000, debug=True)
