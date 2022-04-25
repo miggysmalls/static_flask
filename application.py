@@ -4,7 +4,7 @@ from libraries.Response import Response
 from flask import Flask, render_template, jsonify
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 @app.route('/home')
@@ -52,4 +52,4 @@ def trigger_pas_regression():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run('0.0.0.0', port=5000, debug=True)
